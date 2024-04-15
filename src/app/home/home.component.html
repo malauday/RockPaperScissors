@@ -1,0 +1,33 @@
+<div class="parent-container">
+    <form #playerForm="ngForm" (ngSubmit)="save()" class="player-form" *ngIf = "!showGame" autocomplete="off">
+    <mat-form-field appearance="fill">
+        <input type="text" class="name-input" id="firstPlayerName" name="firstPlayerName" matInput [(ngModel)]="playerName" required placeholder="Enter Player Name">
+    </mat-form-field>
+      <button mat-button type="submit" class="start-button" [disabled]="!playerName">Start</button>
+</form>
+
+<div class="game-wrapper" *ngIf = "showGame">
+
+    <div class="player-grid">
+        <p class="playerName">{{playerName}}</p> <p class="score">Score: {{scores[0]}} </p>
+        <div class="icons-wrapper">
+        <i class="icon fa fa-5x fa-hand-rock-o" (click)="play(0,'rock')" [ngClass]="{'selected': selectedIcon == 'rock'}"></i>
+        <i class="icon fa fa-5x fa-hand-paper-o" (click)="play(1,'paper')" [ngClass]="{'selected': selectedIcon == 'paper'}"></i>
+        <i class="icon fa fa-5x fa-hand-scissors-o" (click)="play(2,'scissor')" [ngClass]="{'selected': selectedIcon == 'scissor'}"></i>
+    </div>
+    </div>
+    <div class="player-grid">
+        <p class="playerName">Computer</p> <p class="score">Score: {{scores[1]}} </p>
+        <div class="icons-wrapper">
+        <i class="icon fa fa-5x fa-hand-rock-o" *ngIf="player2Selected == 0"></i>
+        <i class="icon fa fa-5x fa-hand-paper-o" *ngIf="player2Selected == 1"></i>
+        <i class="icon fa fa-5x fa-hand-scissors-o" *ngIf="player2Selected == 2"></i>
+    </div>
+    </div>
+
+    <div class="result-wrapper">
+        <p class="resultMessage">{{resultMessage}}</p>
+        <button mat-button type="submit" class="reset-button" (click)="reset()">Reset</button>
+    </div>
+</div>
+</div>

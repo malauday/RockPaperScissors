@@ -1,0 +1,79 @@
+.parent-container {
+
+    .player-form {
+
+        .name-input {
+            padding: 10px;
+        }
+
+        .start-button {
+            background: black;
+            color: #fff;
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            margin-left: 40px;
+            display: block;
+        }
+    }
+
+
+
+    .player-grid {
+        float: left;
+
+        .playerName {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .score {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .icons-wrapper {
+            border: 2px solid #000;
+            padding: 10px 0;
+            margin: 0 20px;
+            border-radius: 15px;
+            max-width: 390px;
+            max-height: 200px;
+            min-height: 200px;
+            min-width: 390px;
+
+            .icon {
+                padding: 50px 25px 25px 25px;
+                cursor: pointer;
+
+                &:hover {
+                    // font-size: 5.3em;
+                    color: #0370c8;
+                }
+
+                &.selected {
+                    color: green;
+                }
+            }
+        }
+    }
+
+    .result-wrapper {
+        clear: both;
+        padding: 20px;
+
+        .resultMessage {
+            font-size: 16px;
+            font-weight: bold;
+            height: 20px;
+        }
+
+        .reset-button {
+            background-color: #000;
+            color: #fff;
+            padding: 5px;
+
+        }
+    }
+
+}
